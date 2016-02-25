@@ -16,3 +16,5 @@ RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.1/install.sh
 ADD .bashrc /.bashrc
 
 ENV BASH_ENV /.bashrc
+
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
