@@ -1,1 +1,1 @@
-source /.bash_profile
+source /nvm/nvm.sh
