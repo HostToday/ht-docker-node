@@ -17,4 +17,4 @@ ADD .bashrc /.bashrc
 
 ENV BASH_ENV /.bashrc
 
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+RUN ln -snf /bin/bash /bin/sh
