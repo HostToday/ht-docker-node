@@ -20,7 +20,7 @@ RUN apt-get update \
     && rm -r /var/lib/apt/lists/*
 
 ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 4.4.3
+ENV NODE_VERSION 4.4.1
 
 # Install nvm with node and npm
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash \
@@ -29,7 +29,7 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | b
     && nvm alias default $NODE_VERSION \
     && nvm use default \
     && npm install -g npm \
-    && npm install npmci"
+    && npm install -g npmci"
 
 ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
