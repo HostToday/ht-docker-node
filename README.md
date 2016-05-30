@@ -14,8 +14,7 @@ So if you need an image with a special node version (useful for CI/CA/CD) you ca
 
 ```Dockerfile
 FROM hosttoday/ht-docker-node
-RUN nvm install [node_version_number] \
-    && nvm alias default [node_version_number]
+RUN npmci install [node_version_number] // this installs node using node and sets the default to the new node and npm versions
 ```
 
 npm and node key words will now point to your selected version when you use your new image.
