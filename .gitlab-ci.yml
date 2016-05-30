@@ -1,0 +1,35 @@
+image: docker:git
+services:
+- docker:dind
+
+stages:
+- test
+- release
+
+variables:
+  CONTAINER_TEST_IMAGE: registry.gitlab.com/hosttoday/ht-docker-node:$CI_BUILD_REF_NAME
+  CONTAINER_RELEASE_IMAGE: registry.gitlab.com/hosttoday/ht-docker-node:latest
+
+before_script:
+  - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+
+test:
+  stage: test
+  script:
+    - docker version
+    - docker build -t $CONTAINER_TEST_IMAGE .
+  only:
+    - master
+  tags:
+    - dockerbuild
+
+release:
+  stage: release
+  script:
+    - docker version
+    - docker build -t $CONTAINER_RELEASE_IMAGE .
+    - docker push $CONTAINER_RELEASE_IMAGE
+  only:
+    - master
+  tags:
+    - dockerbuild
