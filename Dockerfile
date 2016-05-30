@@ -13,7 +13,6 @@ RUN apt-get update \
         ca-certificates \
         curl \
         git \
-        libssl-dev \
         python \
         rsync \
     && apt-get clean \
