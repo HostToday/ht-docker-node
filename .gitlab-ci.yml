@@ -25,10 +25,12 @@ test:
 
 release:
   stage: release
+  before_script:
+     - docker login -u philkunz -p $DOCKER_PASSWORD
   script:
     - docker version
-    - docker build -t $CONTAINER_RELEASE_IMAGE .
-    - docker push $CONTAINER_RELEASE_IMAGE
+    - docker build -t hosttoday/ht-docker-node:latest .
+    - docker push hosttoday/ht-docker-node:latest
   only:
     - master
   tags:
