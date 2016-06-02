@@ -11,7 +11,7 @@ variables:
   CONTAINER_RELEASE_IMAGE: registry.gitlab.com/hosttoday/ht-docker-node:latest
 
 before_script:
-  - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+  - npmci prepare docker
 
 test:
   stage: test
@@ -25,8 +25,6 @@ test:
 
 release:
   stage: release
-  before_script:
-     - docker login -u philkunz -p $DOCKER_PASSWORD
   script:
     - docker version
     - docker build -t hosttoday/ht-docker-node:latest .
