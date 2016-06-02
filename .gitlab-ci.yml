@@ -1,4 +1,4 @@
-image: docker:git
+image: hosttoday/ht-docker-node
 services:
   - docker:dind
 
