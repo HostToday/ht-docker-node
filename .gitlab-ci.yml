@@ -1,4 +1,4 @@
-image: hosttoday/ht-docker-node
+image: docker:git
 services:
   - docker:dind
 
@@ -11,7 +11,7 @@ variables:
   CONTAINER_RELEASE_IMAGE: registry.gitlab.com/hosttoday/ht-docker-node:latest
 
 before_script:
-  - npmci prepare docker
+  - docker login -u $DOCKERU -p $DOCKERP
 
 test:
   stage: test
