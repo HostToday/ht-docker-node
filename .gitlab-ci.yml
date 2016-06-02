@@ -11,6 +11,8 @@ variables:
   CONTAINER_RELEASE_IMAGE: registry.gitlab.com/hosttoday/ht-docker-node:latest
 
 before_script:
+  - npm uninstall -g npmci
+  - npm install -g npmci
   - npmci prepare docker
 
 test:
