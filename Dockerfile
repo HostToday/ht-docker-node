@@ -29,5 +29,3 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | b
 
 ENV NODE_PATH $NVM_DIR/v$NODE_VERSION_LTS/lib/node_modules
 ENV PATH      $NVM_DIR/versions/node/v$NODE_VERSION_LTS/bin:$PATH
-
-RUN npm install -g npmci
