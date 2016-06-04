@@ -1,0 +1,2 @@
+FROM ht-docker-node:npmci
+RUN npm install -g npmts
