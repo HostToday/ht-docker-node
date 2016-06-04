@@ -3,6 +3,8 @@ services:
   - docker:dind
 
 stages:
+  - build
+  - buildtags
   - test
   - release
 
@@ -15,11 +17,36 @@ before_script:
   - npm install -g npmci
   - npmci prepare docker
 
+
+buildBASE:
+  stage:build
+  script:
+    - docker build -t hosttoday/ht-docker-node:latest .
+    - docker push hosttoday/ht-docker-node:latest
+  tags:
+    - dockerbuild
+
+buildTAGS:
+  stage:buildtags
+  script:
+    - docker build -t hosttoday/ht-docker-node:lts ./Dockerfile_lts
+    - docker push hosttoday/ht-docker-node:lts
+    - docker build -t hosttoday/ht-docker-node:stable ./Dockerfile_stable
+    - docker push hosttoday/ht-docker-node:stable
+    - docker build -t hosttoday/ht-docker-node:npmci ./Dockerfile_npmci
+    - docker push hosttoday/ht-docker-node:npmci
+    - docker build -t hosttoday/ht-docker-node:npmts ./Dockerfile_npmts
+    - docker push hosttoday/ht-docker-node:npmts
+    - docker build -t hosttoday/ht-docker-node:npmpage ./Dockerfile_npmpage
+    - docker push hosttoday/ht-docker-node:npmpage
+  tags:
+    - dockerbuild
+  
+
 test:
   stage: test
   script:
     - docker version
-    - docker build -t $CONTAINER_TEST_IMAGE .
   only:
     - master
   tags:
@@ -29,8 +56,6 @@ release:
   stage: release
   script:
     - docker version
-    - docker build -t hosttoday/ht-docker-node:latest .
-    - docker push hosttoday/ht-docker-node:latest
   only:
     - master
   tags:
