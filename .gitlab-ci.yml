@@ -19,7 +19,7 @@ before_script:
 
 
 buildBASE:
-  stage:build
+  stage: build
   script:
     - docker build -t hosttoday/ht-docker-node:latest .
     - docker push hosttoday/ht-docker-node:latest
@@ -27,7 +27,7 @@ buildBASE:
     - dockerbuild
 
 buildTAGS:
-  stage:buildtags
+  stage: buildtags
   script:
     - docker build -t hosttoday/ht-docker-node:lts ./Dockerfile_lts
     - docker push hosttoday/ht-docker-node:lts
