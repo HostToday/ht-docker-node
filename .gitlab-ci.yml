@@ -24,7 +24,7 @@ buildBASE:
     - docker build -t hosttoday/ht-docker-node:latest .
     - docker push hosttoday/ht-docker-node:latest
   tags:
-    - dockerbuild
+    - lossless
 
 buildTAGS:
   stage: buildtags
@@ -42,7 +42,7 @@ buildTAGS:
     - docker build -t hosttoday/ht-docker-node:python3 -f Dockerfile_python3 .
     - docker push hosttoday/ht-docker-node:python3
   tags:
-    - dockerbuild
+    - lossless
   
 
 test:
@@ -52,7 +52,7 @@ test:
   only:
     - master
   tags:
-    - dockerbuild
+    - lossless
 
 release:
   stage: release
@@ -61,4 +61,4 @@ release:
   only:
     - master
   tags:
-    - dockerbuild
+    - lossless
