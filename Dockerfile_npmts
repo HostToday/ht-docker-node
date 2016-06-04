@@ -1,2 +1,2 @@
-FROM ht-docker-node:npmci
+FROM hosttoday/ht-docker-node:npmci
 RUN npm install -g npmts
