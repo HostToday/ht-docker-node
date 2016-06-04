@@ -1,0 +1,13 @@
+FROM hosttoday/ht-docker-node:latest
+RUN apt-get update \
+    && apt-get install -y -q --no-install-recommends \
+            python3 \
+    && apt-get clean \
+    && rm -r /var/lib/apt/lists/*
+
+# Install pip and symlink python to python3
+RUN curl -O https://bootstrap.pypa.io/get-pip.py \
+    && python3 get-pip.py \
+    && rm get-pip.py \
+    && rm -r /usr/bin/python \
+    && ln -s /usr/bin/python3 /usr/bin/python

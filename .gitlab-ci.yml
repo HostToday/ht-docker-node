@@ -39,6 +39,8 @@ buildTAGS:
     - docker push hosttoday/ht-docker-node:npmts
     - docker build -t hosttoday/ht-docker-node:npmpage -f Dockerfile_npmpage .
     - docker push hosttoday/ht-docker-node:npmpage
+    - docker build -t hosttoday/ht-docker-node:python3 -f Dockerfile_python3 .
+    - docker push hosttoday/ht-docker-node:python3
   tags:
     - dockerbuild
   
