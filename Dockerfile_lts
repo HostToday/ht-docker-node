@@ -1,1 +1,1 @@
-FROM ht-docker-node
+FROM hosttoday/ht-docker-node:latest
