@@ -29,15 +29,15 @@ buildBASE:
 buildTAGS:
   stage: buildtags
   script:
-    - docker build -t hosttoday/ht-docker-node:lts ./Dockerfile_lts
+    - docker build -t hosttoday/ht-docker-node:lts -f Dockerfile_lts .
     - docker push hosttoday/ht-docker-node:lts
-    - docker build -t hosttoday/ht-docker-node:stable ./Dockerfile_stable
+    - docker build -t hosttoday/ht-docker-node:stable -f Dockerfile_stable .
     - docker push hosttoday/ht-docker-node:stable
-    - docker build -t hosttoday/ht-docker-node:npmci ./Dockerfile_npmci
+    - docker build -t hosttoday/ht-docker-node:npmci -f Dockerfile_npmci .
     - docker push hosttoday/ht-docker-node:npmci
-    - docker build -t hosttoday/ht-docker-node:npmts ./Dockerfile_npmts
+    - docker build -t hosttoday/ht-docker-node:npmts -f Dockerfile_npmts .
     - docker push hosttoday/ht-docker-node:npmts
-    - docker build -t hosttoday/ht-docker-node:npmpage ./Dockerfile_npmpage
+    - docker build -t hosttoday/ht-docker-node:npmpage -f Dockerfile_npmpage .
     - docker push hosttoday/ht-docker-node:npmpage
   tags:
     - dockerbuild
