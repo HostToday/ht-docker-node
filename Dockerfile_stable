@@ -1,5 +1,4 @@
 FROM hosttoday/ht-docker-node:latest
-ENV NODE_VERSION 6.2.1
 
 RUN bash -c "source $NVM_DIR/nvm.sh \
     && nvm install $NODE_VERSION_STABLE \
