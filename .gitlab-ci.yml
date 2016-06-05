@@ -7,6 +7,7 @@ stages:
   - buildtags
   - test
   - release
+  - trigger
 
 variables:
   CONTAINER_TEST_IMAGE: registry.gitlab.com/hosttoday/ht-docker-node:$CI_BUILD_REF_NAME
@@ -58,6 +59,15 @@ release:
   stage: release
   script:
     - docker version
+  only:
+    - master
+  tags:
+    - lossless
+
+trigger:
+  stage: trigger
+  script:
+    - npmci trigger
   only:
     - master
   tags:
