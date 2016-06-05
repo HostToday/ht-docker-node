@@ -4,14 +4,9 @@ services:
 
 stages:
   - build
-  - buildtags
   - test
   - release
   - trigger
-
-variables:
-  CONTAINER_TEST_IMAGE: registry.gitlab.com/hosttoday/ht-docker-node:$CI_BUILD_REF_NAME
-  CONTAINER_RELEASE_IMAGE: registry.gitlab.com/hosttoday/ht-docker-node:latest
 
 before_script:
   - npm uninstall -g npmci
@@ -19,29 +14,10 @@ before_script:
   - npmci prepare docker
 
 
-buildBASE:
+build:
   stage: build
   script:
-    - docker build -t hosttoday/ht-docker-node:latest .
-    - docker push hosttoday/ht-docker-node:latest
-  tags:
-    - lossless
-
-buildTAGS:
-  stage: buildtags
-  script:
-    - docker build -t hosttoday/ht-docker-node:lts -f Dockerfile_lts .
-    - docker push hosttoday/ht-docker-node:lts
-    - docker build -t hosttoday/ht-docker-node:stable -f Dockerfile_stable .
-    - docker push hosttoday/ht-docker-node:stable
-    - docker build -t hosttoday/ht-docker-node:npmci -f Dockerfile_npmci .
-    - docker push hosttoday/ht-docker-node:npmci
-    - docker build -t hosttoday/ht-docker-node:npmts -f Dockerfile_npmts .
-    - docker push hosttoday/ht-docker-node:npmts
-    - docker build -t hosttoday/ht-docker-node:npmpage -f Dockerfile_npmpage .
-    - docker push hosttoday/ht-docker-node:npmpage
-    - docker build -t hosttoday/ht-docker-node:python3 -f Dockerfile_python3 .
-    - docker push hosttoday/ht-docker-node:python3
+    - npmci build docker
   tags:
     - lossless
   
