@@ -26,7 +26,7 @@ build:
 test:
   stage: test
   script:
-    - docker version
+    - npmci test docker
   only:
     - master
   tags:
@@ -35,7 +35,7 @@ test:
 release:
   stage: release
   script:
-    - docker version
+    - npmci publish docker
   only:
     - master
   tags:
