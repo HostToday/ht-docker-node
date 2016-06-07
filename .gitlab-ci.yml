@@ -18,7 +18,6 @@ build:
   stage: build
   script:
     - npmci build docker
-    - npmci publish docker
   tags:
     - lossless
   
