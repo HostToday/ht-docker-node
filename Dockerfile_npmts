@@ -1,4 +1,4 @@
 FROM hosttoday/ht-docker-node:npmci
-RUN npmci install stable && npm install -g npmts && npmts -v \
-    npmci install legacy && npm install -g npmts && npmts -v \
-    npmci install lts && npm install -g npmts && npmts -v
+RUN npmci install stable && npmci command npm install -g npmts && npmts -v \
+    npmci install legacy && npmci command npm install -g npmts && npmts -v \
+    npmci install lts && npmci command npm install -g npmts && npmts -v
