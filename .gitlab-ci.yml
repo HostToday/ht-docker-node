@@ -20,6 +20,7 @@ build:
     - npmci build docker
   tags:
     - lossless
+    - priv
   
 
 test:
@@ -30,6 +31,7 @@ test:
     - master
   tags:
     - lossless
+    - priv
 
 release:
   stage: release
@@ -39,6 +41,7 @@ release:
     - master
   tags:
     - lossless
+    - priv
 
 trigger:
   stage: trigger
@@ -48,3 +51,4 @@ trigger:
     - master
   tags:
     - lossless
+    - priv
