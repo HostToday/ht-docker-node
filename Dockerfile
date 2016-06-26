@@ -14,6 +14,7 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
         ca-certificates \
         curl \
         git \
+        openssh \
         openssl \
         python \
         rsync \
