@@ -1,10 +1,1 @@
 FROM hosttoday/ht-docker-node:latest
-
-RUN bash -c "source $NVM_DIR/nvm.sh \
-    && nvm install $NODE_VERSION_STABLE \
-    && nvm alias default $NODE_VERSION_STABLE \
-    && nvm use default \
-    && npm install -g npm"
-    
-ENV NODE_PATH $NVM_DIR/v$NODE_VERSION_STABLE/lib/node_modules
-ENV PATH      $NVM_DIR/versions/node/v$NODE_VERSION_STABLE/bin:$PATH
