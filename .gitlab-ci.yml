@@ -29,6 +29,7 @@ test:
     - npmci test docker
   only:
     - tags
+    - triggers
   tags:
     - lossless
     - priv
@@ -39,6 +40,7 @@ release:
     - npmci publish docker
   only:
     - tags
+    - triggers
   tags:
     - lossless
     - priv
@@ -49,6 +51,7 @@ trigger:
     - npmci trigger
   only:
     - tags
+    - triggers
   tags:
     - lossless
     - priv
