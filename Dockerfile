@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 # important environment variables 
-ENV NODE_VERSION_LTS="4.4.7" NODE_VERSION_STABLE="6.3.0" NVM_DIR="/usr/local/nvm"
+ENV NODE_VERSION_LTS="6.9.1" NODE_VERSION_STABLE="7.1.0" NVM_DIR="/usr/local/nvm"
 
 # Set debconf to run non-interactively and install packages
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections \
