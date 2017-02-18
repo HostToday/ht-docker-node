@@ -5,5 +5,5 @@ npm -v
 node -v
 
 # test yarn
-npmci command yarn install npmts
-npmci command npmts -v
+yarn install npmts
+npmts -v
