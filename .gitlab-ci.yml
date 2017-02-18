@@ -27,9 +27,6 @@ test:
   stage: test
   script:
     - npmci test docker
-  only:
-    - tags
-    - triggers
   tags:
     - lossless
     - priv
