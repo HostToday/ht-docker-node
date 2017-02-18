@@ -5,6 +5,8 @@ ENV NODE_VERSION_LTS="6.9.1" NODE_VERSION_STABLE="7.1.0" NVM_DIR="/usr/local/nvm
 
 # Set debconf to run non-interactively and install packages
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections \
+    && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - \
+    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list \
     && apt-get update \
     && apt-get upgrade --no-install-recommends -y \
     && apt-get install -y -q --no-install-recommends \
@@ -18,6 +20,7 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
         openssl \
         python \
         rsync \
+        yarn \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/*
 
