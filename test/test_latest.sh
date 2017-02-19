@@ -5,5 +5,5 @@ npm -v
 node -v
 
 # test yarn
-yarn install npmts
+yarn global add npmts
 npmts -v
