@@ -27,4 +27,4 @@ RUN npmci install [node_version_number] // this installs node using node and set
 * **:npmci** - npmci preinstalled
 * **:npmts** - npmci + npmts preinstalled
 * **:npmpage** - npmci + npmts + npmpage preinstalled
-* **:python3** - like :latest, but with python3 as standard python version
+* **:mongo** - npmci + npmts + mongo
