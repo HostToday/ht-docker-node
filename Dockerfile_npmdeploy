@@ -1,2 +1,0 @@
-FROM hosttoday/ht-docker-node:npmci
-RUN npm install -g npmdeploy

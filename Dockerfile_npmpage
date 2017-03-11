@@ -1,5 +1,0 @@
-FROM hosttoday/ht-docker-node:npmts
-RUN npmci install stable && npmci command npm install -g npmpage && npmci command npmpage -v \
-    && npmci install legacy && npmci command npm install -g npmpage && npmci command npmpage -v \
-    && npmci install lts && npmci command npm install -g npmpage && npmci command npmpage -v \
-    && npmci clean

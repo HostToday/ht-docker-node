@@ -1,2 +1,2 @@
-FROM hosttoday/ht-docker-node:latest
+FROM hosttoday/ht-docker-node:stable
 RUN npm install -g npmci
