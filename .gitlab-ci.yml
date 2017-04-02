@@ -1,3 +1,4 @@
+# gitzone docker
 image: hosttoday/ht-docker-dbase:latest
 services:
   - docker:dind
@@ -7,6 +8,7 @@ stages:
   - test
   - release
   - trigger
+  - pages
 
 before_script:
   - npm uninstall -g npmci
@@ -52,3 +54,18 @@ trigger:
   tags:
     - lossless
     - priv
+
+pages:
+  image: hosttoday/ht-docker-node:npmci
+  stage: pages
+  script:
+    - npmci command yarn global add npmpage
+    - npmci command npmpage
+  only:
+    - tags
+  tags:
+    - docker
+  artifacts:
+    expire_in: 1 week
+    paths:
+    - public
