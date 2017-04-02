@@ -56,7 +56,8 @@ trigger:
     - priv
 
 pages:
-  before_script: 'npmci -v'
+  before_script:
+    - 'npmci -v'
   image: hosttoday/ht-docker-node:npmci
   stage: pages
   script:
