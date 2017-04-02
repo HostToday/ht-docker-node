@@ -4,8 +4,6 @@ the ultimate docker node image
 ## Status
 [![build status](https://gitlab.com/hosttoday/ht-docker-node/badges/master/build.svg)](https://gitlab.com/hosttoday/ht-docker-node/commits/master)
 
-[Docs](https://hosttoday.gitlab.io/ht-docker-node/)
-
 ## Availability
 Registry | Image Path
 --- | ---

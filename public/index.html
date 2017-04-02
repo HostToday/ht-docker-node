@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quicksite</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700|Roboto+Slab:300,400,700|Roboto:300,400,700"
+      rel="stylesheet"
+    >
+    <style>
+      .menuBox {
+  box-shadow: 0px 0px 5px #CCCCCC;
+  margin: auto;
+  box-sizing: border-box;
+  margin-bottom: 70px;
+  margin-top: 0px;
+  width: 100%;
+  background: #2196F3;
+  position: fixed;
+  padding: 15px;
+  will-change: transform; }
+  .menuBox .menuItems {
+    text-align: right; }
+    .menuBox .menuItems a {
+      display: inline-block;
+      padding: 0px 10px;
+      border-right: 1px #fff solid;
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #fafafa; }
+      .menuBox .menuItems a:hover {
+        color: #fff; }
+      .menuBox .menuItems a:last-of-type {
+        border-right: none; }
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 1.414rem 0 .5rem;
+  font-weight: inherit;
+  font-family: 'Roboto Slab', serif;
+  line-height: 1.42;
+  text-align: center; }
+
+h1 {
+  margin-top: 0;
+  font-size: 3.998rem; }
+  h1::after {
+    display: block;
+    margin: auto;
+    margin-top: 0px;
+    width: 200px;
+    border-top: 2px #e4002b solid;
+    content: ''; }
+  h1 + h2 {
+    font-weight: 300;
+    margin-top: 5px;
+    font-size: 25px; }
+
+h2 {
+  font-size: 2.827rem; }
+
+h3 {
+  font-size: 1.999rem; }
+
+h4 {
+  font-size: 1.414rem; }
+
+h5 {
+  font-size: 1.121rem; }
+
+h6 {
+  font-size: .88rem; }
+
+table {
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-bottom: 2rem;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-color: #fff;
+  box-shadow: 0px 0px 3px #ccc;
+  border-radius: 3px;
+  padding: 10px; }
+  @media screen and (min-width: 768px) {
+    table {
+      width: 768px; } }
+  @media screen and (min-width: 1200px) {
+    table {
+      width: 968px;
+      margin-left: -100px;
+      margin-right: -100px; } }
+  table thead tr,
+  table tbody tr,
+  table tfoot tr {
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    table thead tr th,
+    table thead tr td,
+    table tbody tr th,
+    table tbody tr td,
+    table tfoot tr th,
+    table tfoot tr td {
+      text-align: left;
+      padding: 10px;
+      vertical-align: top;
+      border-top: 0;
+      -webkit-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+  table thead tr th {
+    font-weight: 400;
+    color: #757575;
+    vertical-align: bottom;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+  table caption + thead tr:first-child th,
+  table caption + thead tr:first-child td,
+  table colgroup + thead tr:first-child th,
+  table colgroup + thead tr:first-child td,
+  table thead:first-child tr:first-child th,
+  table thead:first-child tr:first-child td {
+    border-top: 0; }
+  table tbody + tbody {
+    border-top: 1px solid rgba(0, 0, 0, 0.12); }
+
+blockquote {
+  padding: 0px;
+  page-break-inside: avoid;
+  margin: 0;
+  border-left: 5px solid #7a7a7a;
+  font-style: italic;
+  text-align: left; }
+  blockquote p {
+    padding: 10px; }
+
+table {
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-bottom: 2rem;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-color: #fff;
+  box-shadow: 0px 0px 3px #ccc;
+  border-radius: 3px;
+  padding: 10px; }
+  @media screen and (min-width: 768px) {
+    table {
+      width: 768px; } }
+  @media screen and (min-width: 1200px) {
+    table {
+      width: 968px;
+      margin-left: -100px;
+      margin-right: -100px; } }
+  table thead tr,
+  table tbody tr,
+  table tfoot tr {
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    table thead tr th,
+    table thead tr td,
+    table tbody tr th,
+    table tbody tr td,
+    table tfoot tr th,
+    table tfoot tr td {
+      text-align: left;
+      padding: 10px;
+      vertical-align: top;
+      border-top: 0;
+      -webkit-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+  table thead tr th {
+    font-weight: 400;
+    color: #757575;
+    vertical-align: bottom;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+  table caption + thead tr:first-child th,
+  table caption + thead tr:first-child td,
+  table colgroup + thead tr:first-child th,
+  table colgroup + thead tr:first-child td,
+  table thead:first-child tr:first-child th,
+  table thead:first-child tr:first-child td {
+    border-top: 0; }
+  table tbody + tbody {
+    border-top: 1px solid rgba(0, 0, 0, 0.12); }
+
+.content {
+  margin: auto;
+  padding-top: 110px;
+  max-width: 768px; }
+  @media screen and (max-width: 808px) {
+    .content {
+      margin-left: 20px;
+      margin-right: 20px; } }
+
+.footer {
+  border-top: 2px #333 solid;
+  margin: auto;
+  margin-top: 70px;
+  margin-bottom: 60px;
+  max-width: 768px; }
+  @media screen and (min-width: 500px) {
+    .footer .footerGridContainer {
+      margin-left: -20px;
+      margin-right: -20px; } }
+  .footer .footerGridContainer::after {
+    clear: both;
+    content: "";
+    display: block; }
+  .footer .footerGridContainer .footerColumn {
+    padding-top: 20px; }
+    @media screen and (min-width: 500px) {
+      .footer .footerGridContainer .footerColumn {
+        width: calc(33.33333% - 26.66667px);
+        float: left;
+        margin-left: 20px; } }
+    .footer .footerGridContainer .footerColumn h1 {
+      font-size: 14px;
+      font-weight: 700;
+      text-align: left;
+      text-transform: uppercase; }
+      .footer .footerGridContainer .footerColumn h1::after {
+        content: none; }
+    .footer .footerGridContainer .footerColumn a {
+      color: #333;
+      text-decoration: none;
+      display: block;
+      padding: 2px 10px 2px 10px;
+      border-left: #CCC 2px solid;
+      -webkit-transition: all 0.1s ease;
+      -o-transition: all 0.1s ease;
+      transition: all 0.1s ease; }
+      .footer .footerGridContainer .footerColumn a:hover {
+        border-left: 2px #e4002b solid;
+        background: #e8e8e8; }
+      .footer .footerGridContainer .footerColumn a + span {
+        -webkit-transition: all 0.1s ease;
+        -o-transition: all 0.1s ease;
+        transition: all 0.1s ease;
+        color: #666;
+        font-family: 'Roboto Mono', monospace;
+        font-weight: 400;
+        font-size: 10px;
+        display: block;
+        padding-left: 10px;
+        border-left: 2px #eee solid;
+        margin-bottom: 5px; }
+      .footer .footerGridContainer .footerColumn a:hover + span {
+        border-left: 2px #e4002b solid;
+        background: #f0f0f0; }
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important; }
+  a,
+  a:visited {
+    text-decoration: underline; }
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: ""; }
+  pre {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+  thead {
+    display: table-header-group; }
+  tr {
+    page-break-inside: avoid; }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+  h2,
+  h3 {
+    page-break-after: avoid; } }
+
+html {
+  font-size: 12px; }
+
+@media screen and (min-width: 32rem) and (max-width: 48rem) {
+  html {
+    font-size: 15px; } }
+
+@media screen and (min-width: 48rem) {
+  html {
+    font-size: 16px; } }
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1.3rem; }
+
+small {
+  font-size: .707em; }
+
+canvas,
+iframe,
+video,
+svg,
+select,
+textarea {
+  max-width: 100%; }
+
+body {
+  color: #444;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  line-height: 1.85;
+  margin: 0px; }
+
+a,
+a:visited {
+  color: #3498db; }
+
+a:hover, a:focus, a:active {
+  color: #2980b9; }
+
+pre {
+  background-color: #fafafa;
+  padding: 1rem;
+  text-align: left; }
+
+ul,
+ol,
+li {
+  text-align: left; }
+
+p {
+  color: #777; }
+
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class='menuBox'>
+      <div class='menuItems'>
+        <a href='./index.html'>index</a>
+      </div>
+    </div>
+    <div class='content'>
+      <h1 id="ht-docker-node">ht-docker-node</h1>
+<p>the ultimate docker node image</p>
+<h2 id="status">Status</h2>
+<p><a href="https://gitlab.com/hosttoday/ht-docker-node/commits/master"><img src="https://gitlab.com/hosttoday/ht-docker-node/badges/master/build.svg" alt="build status"></a></p>
+<h2 id="availability">Availability</h2>
+<table>
+<thead>
+<tr>
+<th>Registry</th>
+<th>Image Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GitLab Registry</td>
+<td>registry.gitlab.com/hosttoday/ht-docker-node</td>
+</tr>
+<tr>
+<td>Docker Hub</td>
+<td>hosttoday/ht-docker-node</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usage">Usage</h2>
+<p>The purpose of this Docker image is to provide a robust base for node apps and CI.
+It comes in different flavours and all of them have node, npm, git and ssh in PATH.</p>
+<p>The <strong>:npmci flavour</strong> has npmci in path and can install any required node version and update PATH accordingly:</p>
+<pre><code class="lang-Dockerfile">FROM hosttoday/ht-docker-<span class="hljs-keyword">node</span><span class="hljs-title">:npmci</span>
+RUN npmci install [node_version_number] // this installs <span class="hljs-keyword">node</span> <span class="hljs-title">using</span> <span class="hljs-keyword">node</span> <span class="hljs-title">and</span> sets the default to the new <span class="hljs-keyword">node</span> <span class="hljs-title">and</span> npm versions
+</code></pre>
+<h2 id="flavour-overview-">Flavour Overview:</h2>
+<ul>
+<li><strong>:lts</strong> - node lts version, equals :latest</li>
+<li><strong>:stable</strong> - node stable version</li>
+<li><strong>:npmci</strong> - npmci preinstalled</li>
+<li><strong>:npmts</strong> - npmci + npmts preinstalled</li>
+<li><strong>:npmpage</strong> - npmci + npmts + npmpage preinstalled</li>
+<li><strong>:mongo</strong> - npmci + npmts + mongo</li>
+</ul>
+<p>For further information read the linked docs at the top of this README.</p>
+<blockquote>
+<p>MIT licensed | <strong>&copy;</strong> <a href="https://lossless.gmbh">Lossless GmbH</a>
+| By using this npm module you agree to our <a href="https://lossless.gmbH/privacy.html">privacy policy</a></p>
+</blockquote>
+<p><a href="https://host.today"><img src="https://hosttoday.gitlab.io/assets/repo-footer.svg" alt="repo-footer"></a></p>
+
+      <div class='footer'>
+        <div class='footerGridContainer'>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>
