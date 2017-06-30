@@ -1,5 +1,5 @@
 # gitzone docker
-image: hosttoday/ht-docker-dbase:latest
+image: hosttoday/ht-docker-dbase:npmci
 services:
   - docker:dind
 variables:
@@ -14,7 +14,6 @@ stages:
   - pages
 
 before_script:
-  - yarn global add npmci
   - npmci prepare docker
 
 build:
