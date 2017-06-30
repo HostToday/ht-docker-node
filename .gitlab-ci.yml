@@ -14,8 +14,8 @@ stages:
   - pages
 
 before_script:
-  - npm uninstall -g npmci
-  - npm install -g npmci
+  - yarn global add npmci
+  - yarn global upgrade
   - npmci prepare docker
 
 
