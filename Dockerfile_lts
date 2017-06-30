@@ -5,7 +5,7 @@ RUN bash -c "source $NVM_DIR/nvm.sh \
     && nvm install $NODE_VERSION_LTS \
     && nvm alias default $NODE_VERSION_LTS \
     && nvm use default \
-    && npm config --unsafe-perm true \
+    && npm config set unsafe-perm true \
     && npm install -g npm"
     
 ENV NODE_PATH $NVM_DIR/v$NODE_VERSION_LTS/lib/node_modules
