@@ -1,2 +1,4 @@
 FROM hosttoday/ht-docker-node:stable
+MAINTAINER Lossless GmbH <office@lossless.com>
+
 RUN npm install -g npmci
