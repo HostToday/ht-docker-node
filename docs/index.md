@@ -1,3 +1,7 @@
+---
+name: ht-docker-node
+description: the ultimate docker-node image
+---
 # ht-docker-node
 the ultimate docker node image
 
@@ -26,9 +30,15 @@ RUN npmci install [node_version_number] // this installs node using node and set
 * **:lts** - node lts version, equals :latest
 * **:stable** - node stable version
 * **:npmci** - npmci preinstalled
+* **:npmcijava - npmci + java
 * **:npmts** - npmci + npmts preinstalled
 * **:npmpage** - npmci + npmts + npmpage preinstalled
 * **:mongo** - npmci + npmts + mongo
+
+## optimized for performance with npmci and npmts
+Take a goof look at the **npmts** and **npmci** tools on npm. They make development of TypeScript node modules rediculouly easy :)
+
+The **:npmcijava** flavour works together with **smartwebdriver** so you can test all your cool polymer elements in a headless chrome environment or sauce :)
 
 For further information read the linked docs at the top of this README.
 
