@@ -2,6 +2,9 @@
 image: hosttoday/ht-docker-dbase:latest
 services:
   - docker:dind
+variables:
+  DOCKER_DRIVER: overlay
+
 
 stages:
   - build
