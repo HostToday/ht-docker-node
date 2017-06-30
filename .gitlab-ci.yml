@@ -14,10 +14,7 @@ stages:
   - pages
 
 before_script:
-  - yarn global add npmci
-  - yarn global upgrade
   - npmci prepare docker
-
 
 build:
   stage: build
