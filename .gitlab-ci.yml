@@ -1,7 +1,7 @@
 # gitzone docker
 image: hosttoday/ht-docker-dbase:npmci
 services:
-  - docker:dind
+  - docker:17.06.0-dind
 variables:
   DOCKER_DRIVER: overlay
 
