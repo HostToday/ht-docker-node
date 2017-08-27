@@ -21,6 +21,7 @@ build:
   stage: build
   script:
     - npmci docker build
+    - npmci docker push registry.gitlab.com test
   tags:
     - lossless
     - priv
@@ -29,6 +30,7 @@ build:
 test:
   stage: test
   script:
+    - npmci docker pull registry.gitlab.com test
     - npmci docker test
   tags:
     - lossless
@@ -37,7 +39,8 @@ test:
 release:
   stage: release
   script:
-    - npmci docker
+    - npmci docker pull registry.gitlab.com test
+    - npmci docker push docker.io
   only:
     - tags
     - triggers
