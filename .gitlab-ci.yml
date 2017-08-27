@@ -15,12 +15,12 @@ stages:
 
 before_script:
   - yarn global add npmci
-  - npmci prepare docker
+  - npmci docker prepare
 
 build:
   stage: build
   script:
-    - npmci build docker
+    - npmci docker build
   tags:
     - lossless
     - priv
@@ -29,7 +29,7 @@ build:
 test:
   stage: test
   script:
-    - npmci test docker
+    - npmci docker test
   tags:
     - lossless
     - priv
@@ -37,7 +37,7 @@ test:
 release:
   stage: release
   script:
-    - npmci publish docker
+    - npmci docker
   only:
     - tags
     - triggers
