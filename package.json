@@ -1,6 +1,6 @@
 {
   "name": "ht-docker-node",
-  "version": "4.3.24",
+  "version": "4.3.25",
   "description": "docker image with nodejs with shipzone.io support",
   "main": "index.js",
   "scripts": {
