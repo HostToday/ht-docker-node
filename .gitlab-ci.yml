@@ -15,7 +15,7 @@ stages:
 
 before_script:
   - yarn global add npmci
-  - npmci docker prepare
+  - npmci docker login
 
 build:
   stage: build
