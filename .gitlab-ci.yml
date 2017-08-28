@@ -41,6 +41,7 @@ release:
   script:
     - npmci docker pull registry.gitlab.com test
     - npmci docker push docker.io
+    - npmci docker push registry.gitlab.com
   only:
     - tags
     - triggers
