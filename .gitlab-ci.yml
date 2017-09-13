@@ -23,9 +23,8 @@ buildAndTest:
   script:
     - npmci docker build
     - npmci docker test
-  only:
-    refs:
-      - master
+  except:
+    - tags
   tags:
     - lossless
     - priv
