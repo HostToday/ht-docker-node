@@ -7,6 +7,7 @@ variables:
 
 
 stages:
+  - buildAndTest
   - build
   - test
   - release
@@ -17,11 +18,26 @@ before_script:
   - yarn global add npmci
   - npmci docker login
 
+buildAndTest:
+  stage: buildAndTest
+  script:
+    - npmci docker build
+    - npmci docker test
+  only:
+    refs:
+      - master
+  tags:
+    - lossless
+    - priv
+
 build:
   stage: build
   script:
     - npmci docker build
     - npmci docker push registry.gitlab.com test
+  only:
+    - tags
+    - triggers
   tags:
     - lossless
     - priv
@@ -32,6 +48,9 @@ test:
   script:
     - npmci docker pull registry.gitlab.com test
     - npmci docker test
+  only:
+    - tags
+    - triggers
   tags:
     - lossless
     - priv
