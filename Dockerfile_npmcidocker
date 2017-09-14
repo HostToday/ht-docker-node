@@ -1,2 +1,2 @@
-FROM hosttoday/ht-docker-node:stable
+FROM hosttoday/ht-docker-node:npmci
 RUN curl -sSL https://get.docker.com/ | sh
