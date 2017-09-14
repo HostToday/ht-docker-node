@@ -1,3 +1,0 @@
-FROM hosttoday/ht-docker-node:npmcidocker
-RUN bash -c "$(curl -fsSL https://s3.amazonaws.com/tools.nanobox.io/bootstrap/ci.sh)"
-RUN nanobox config set ci-mode true
