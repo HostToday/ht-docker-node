@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:xenial
 MAINTAINER Lossless GmbH <office@lossless.com>
 
 # important environment variables 
