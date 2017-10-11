@@ -1,1 +1,1 @@
-mkdocs -v
+mkdocs --version
