@@ -25,6 +25,7 @@ buildAndTest:
     - npmci docker test
   except:
     - tags
+    - triggers
   tags:
     - lossless
     - priv
