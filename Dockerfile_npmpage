@@ -1,4 +1,6 @@
 FROM hosttoday/ht-docker-node:stable
+LABEL author="Lossless GmbH <office@lossless.com>"
+
 RUN apt-get update && apt-get install -y python-pip
 RUN yarn global add npmpage
 RUN pip install --upgrade pip \

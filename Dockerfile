@@ -1,5 +1,5 @@
 FROM ubuntu:xenial
-MAINTAINER Lossless GmbH <office@lossless.com>
+LABEL author="Lossless GmbH <office@lossless.com>"
 
 # important environment variables 
 ENV NODE_VERSION_LTS="6.10.0" NODE_VERSION_STABLE="8.1.3" NVM_DIR="/usr/local/nvm"

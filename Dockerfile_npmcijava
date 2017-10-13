@@ -1,5 +1,5 @@
 FROM hosttoday/ht-docker-node:npmci
-MAINTAINER Lossless GmbH <office@lossless.com>
+LABEL author="Lossless GmbH <office@lossless.com>"
 
 # Install Java.
 RUN \

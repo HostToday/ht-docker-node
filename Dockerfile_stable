@@ -1,4 +1,5 @@
 FROM hosttoday/ht-docker-node:latest
+LABEL author="Lossless GmbH <office@lossless.com>"
 
 RUN bash -c "source $NVM_DIR/nvm.sh \
     && nvm install $NODE_VERSION_STABLE \

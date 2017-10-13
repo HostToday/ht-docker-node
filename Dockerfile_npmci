@@ -1,4 +1,4 @@
 FROM hosttoday/ht-docker-node:stable
-MAINTAINER Lossless GmbH <office@lossless.com>
+LABEL author="Lossless GmbH <office@lossless.com>"
 
 RUN yarn global add npmci
