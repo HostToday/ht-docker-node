@@ -2,7 +2,7 @@ FROM ubuntu:xenial
 LABEL author="Lossless GmbH <office@lossless.com>"
 
 # important environment variables 
-ENV NODE_VERSION_LTS="6.10.0" NODE_VERSION_STABLE="8.1.3" NVM_DIR="/usr/local/nvm"
+ENV NODE_VERSION_LTS="8.9.3" NODE_VERSION_STABLE="9.3.0" NVM_DIR="/usr/local/nvm"
 
 # Set debconf to run non-interactively and install packages
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections \
