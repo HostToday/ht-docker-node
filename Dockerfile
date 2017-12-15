@@ -31,4 +31,4 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
     && rm -r /var/lib/apt/lists/*
 
 # Install nvm with node and npm
-RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
