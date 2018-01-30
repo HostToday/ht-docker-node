@@ -31,7 +31,9 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
     && rm -r /var/lib/apt/lists/*
 
 # See https://crbug.com/795759
-RUN apt-get update && apt-get install -yq libgconf-2-4
+RUN apt-get update && apt-get install -yq libgconf-2-4 \
+  && apt-get clean \
+  && rm -r /var/lib/apt/lists/*
 
 # Install latest chrome dev package.
 # Note: this installs the necessary libs to make the bundled version of Chromium that Puppeteer
