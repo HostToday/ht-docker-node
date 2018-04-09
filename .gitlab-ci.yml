@@ -2,15 +2,9 @@
 image: hosttoday/ht-docker-dbase:npmci
 services:
   - docker:dind
-variables:
-  DOCKER_DRIVER: overlay
-
 
 stages:
   - buildAndTest
-  - build
-  - test
-  - release
   - trigger
   - pages
 
@@ -18,7 +12,7 @@ before_script:
   - yarn global add npmci
   - npmci docker login
 
-buildAndTest:
+buildTest:
   stage: buildAndTest
   script:
     - npmci docker build
@@ -30,37 +24,14 @@ buildAndTest:
     - lossless
     - priv
 
-build:
-  stage: build
+buildTestRelase:
+  stage: buildAndTest
   script:
     - npmci docker build
-    - npmci docker push registry.gitlab.com test
-  only:
-    - tags
-    - triggers
-  tags:
-    - lossless
-    - priv
-  
-
-test:
-  stage: test
-  script:
-    - npmci docker pull registry.gitlab.com test
     - npmci docker test
-  only:
-    - tags
-    - triggers
-  tags:
-    - lossless
-    - priv
-
-release:
-  stage: release
-  script:
-    - npmci docker pull registry.gitlab.com test
-    - npmci docker push docker.io
+    - npmci docker push registry.gitlab.com test
     - npmci docker push registry.gitlab.com
+    - npmci docker push docker.io
   only:
     - tags
     - triggers
