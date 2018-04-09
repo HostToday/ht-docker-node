@@ -31,7 +31,6 @@ RUN npmci install [node_version_number] // this installs node using node and set
 * **:stable** - node stable version
 * **:npmci** - npmci preinstalled
 * **:npmcijava - npmci + java
-* **:npmts** - npmci + npmts preinstalled
 * **:npmpage** - npmci + npmts + npmpage preinstalled
 * **:mongo** - npmci + npmts + mongo
 
