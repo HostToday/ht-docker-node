@@ -5,9 +5,7 @@ services:
 
 stages:
   - buildAndTest
-  - trigger
-  - pages
-  - verify
+  - triggerPagesVerify
 
 before_script:
   - yarn global add npmci
@@ -41,7 +39,7 @@ buildTestRelase:
     - priv
 
 trigger:
-  stage: trigger
+  stage: triggerPagesVerify
   script:
     - npmci trigger
   only:
@@ -52,10 +50,10 @@ trigger:
     - priv
 
 pages:
+  stage: triggerPagesVerify
   before_script:
     - 'npmci -v'
   image: hosttoday/ht-docker-node:npmci
-  stage: pages
   script:
     - npmci command yarn global add npmpage
     - npmci command npmpage
@@ -69,7 +67,7 @@ pages:
     - public
 
 verify:
-  stage: trigger
+  stage: triggerPagesVerify
   script:
     - npmci docker pull registry.gitlab.com test
   only:
