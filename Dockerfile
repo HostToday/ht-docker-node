@@ -1,6 +1,6 @@
 FROM ubuntu:xenial
 LABEL author="Lossless GmbH <office@lossless.com>"
-
+WORKDIR /workspace
 # important environment variables 
 ENV NODE_VERSION_LTS="8.9.4" NODE_VERSION_STABLE="9.4.0" NVM_DIR="/usr/local/nvm"
 
