@@ -1,2 +1,2 @@
 #!/bin/sh
-npm -v
+echo "this runs within latest container!";
