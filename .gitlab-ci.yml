@@ -8,7 +8,7 @@ stages:
   - triggerPagesVerify
 
 before_script:
-  - npm install -g npmci
+  - npm install -g @shipzone/npmci
   - npmci docker login
 
 buildTest:
