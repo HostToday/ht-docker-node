@@ -4,6 +4,6 @@ npmci -v
 # check if we can use lts
 npmci install lts
 
-# check if yarn picks it up
-npmci command yarn global add npmts
+# check if npm picks it up
+npmci command npm install -g npmts
 npmci command npmts -v

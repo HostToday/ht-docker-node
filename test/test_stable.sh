@@ -1,3 +1,3 @@
-# test yarn
-yarn global add npmts
+# npm
+npm install -g npmts
 npmts -v

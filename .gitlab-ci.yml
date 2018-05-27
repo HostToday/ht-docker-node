@@ -8,7 +8,7 @@ stages:
   - triggerPagesVerify
 
 before_script:
-  - yarn global add npmci
+  - npm install -g npmci
   - npmci docker login
 
 buildTest:
@@ -55,7 +55,7 @@ pages:
     - 'npmci -v'
   image: hosttoday/ht-docker-node:npmci
   script:
-    - npmci command yarn global add npmpage
+    - npmci command npm install -g npmpage
     - npmci command npmpage
   only:
     - tags

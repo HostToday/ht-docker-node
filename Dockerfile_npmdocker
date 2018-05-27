@@ -1,4 +1,4 @@
 FROM hosttoday/ht-docker-node:stable
 LABEL author="Lossless GmbH <office@lossless.com>"
 
-RUN yarn global add npmci npmdocker @gitzone/npmts ts-node
+RUN npm install -g npmci npmdocker @gitzone/npmts ts-node
