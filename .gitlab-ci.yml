@@ -55,8 +55,9 @@ pages:
     - 'npmci -v'
   image: hosttoday/ht-docker-node:npmci
   script:
-    - npmci command npm install -g npmpage
-    - npmci command npmpage
+    # - npmci command npm install -g npmpage
+    # - npmci command npmpage
+    - echo "nothing here yet until @gitzone/npmpage is ready!"
   only:
     - tags
   tags:
