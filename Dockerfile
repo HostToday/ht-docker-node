@@ -1,5 +1,5 @@
 FROM ubuntu:xenial
-LABEL author="Lossless GmbH <office@lossless.com>"
+LABEL author="Lossless GmbH <hello@lossless.com>"
 
 WORKDIR /workspace
 # important environment variables 

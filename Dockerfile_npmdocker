@@ -1,4 +1,4 @@
 FROM hosttoday/ht-docker-node:stable
-LABEL author="Lossless GmbH <office@lossless.com>"
+LABEL author="Lossless GmbH <hello@lossless.com>"
 
 RUN npm install -g @shipzone/npmci @gitzone/npmdocker @gitzone/npmts ts-node
