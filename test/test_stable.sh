@@ -1,3 +1,5 @@
 # npm
-npm install -g npmts
-npmts -v
+npm -v
+node -v
+npm install -g @gitzone/gitzone
+gitzone -v
