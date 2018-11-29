@@ -5,5 +5,5 @@ npmci -v
 npmci install lts
 
 # check if npm picks it up
-npmci command npm install -g npmts
-npmci command npmts -v
+npmci command npm install -g @gitzone/gitzone
+npmci command gitzone -v
