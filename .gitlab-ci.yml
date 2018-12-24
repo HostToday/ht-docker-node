@@ -23,7 +23,7 @@ buildTest:
     - lossless
     - priv
 
-buildTestRelase:
+buildTestRelease:
   stage: buildAndTest
   script:
     - npmci docker build
