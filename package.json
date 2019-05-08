@@ -1,10 +1,11 @@
 {
   "name": "ht-docker-node",
   "version": "5.0.9",
-  "description": "docker image with nodejs with shipzone.io support",
+  "description": "docker image with nodejs and shipzone.io support",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo \"Not needed for now\""
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,6 @@
   "bugs": {
     "url": "https://github.com/HostToday/ht-docker-node/issues"
   },
-  "homepage": "https://github.com/HostToday/ht-docker-node#readme"
+  "homepage": "https://github.com/HostToday/ht-docker-node#readme",
+  "private": true
 }
