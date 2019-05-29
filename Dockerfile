@@ -24,6 +24,7 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
         rsync \
         ssh \
         wget \
+        libx11-xcb1 \
     && apt-get update \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/*
