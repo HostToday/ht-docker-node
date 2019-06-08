@@ -1,76 +1,51 @@
-# gitzone docker
-image: hosttoday/ht-docker-dbase:npmci
-services:
-  - docker:dind
+# gitzone ci_docker
+image: hosttoday/ht-docker-node:npmci
 
-stages:
-  - buildAndTest
-  - triggerPagesVerify
+cache:
+  paths:
+  - .npmci-cache/
+  key: "$CI_BUILD_STAGE"
 
 before_script:
-  - npm install -g @shipzone/npmci
-  - npmci docker login
+  - npmci npm prepare
 
-buildTest:
-  stage: buildAndTest
+stages:
+- test
+- release
+- trigger
+- pages
+    
+testSTABLE:
+  stage: test
   script:
-    - npmci docker build
-    - npmci docker test
-  except:
-    - tags
-    - triggers
-  tags:
-    - lossless
-    - priv
-
-buildTestRelease:
-  stage: buildAndTest
-  script:
-    - npmci docker build
-    - npmci docker test
-    - npmci docker push registry.gitlab.com test
-    - npmci docker push registry.gitlab.com
-    - npmci docker push docker.io
-  only:
-    - tags
-    - triggers
-  tags:
-    - lossless
-    - priv
-
-trigger:
-  stage: triggerPagesVerify
-  script:
-    - npmci trigger
-  only:
-    - tags
-    - triggers
-  tags:
-    - lossless
-    - priv
-
-pages:
-  stage: triggerPagesVerify
-  before_script:
-    - 'npmci -v'
-  image: hosttoday/ht-docker-node:npmci
-  script:
-    # - npmci command npm install -g npmpage
-    # - npmci command npmpage
-    - echo "nothing here yet until @gitzone/npmpage is ready!"
-  only:
-    - tags
+    - npmci node install stable
+    - npmci npm install
+    - npmci npm test
+  coverage: /\d+.?\d+?\%\s*coverage/
   tags:
     - docker
-  artifacts:
-    expire_in: 1 week
-    paths:
-    - public
 
-verify:
-  stage: triggerPagesVerify
+release:
+  image: hosttoday/ht-docker-dbase:npmci
+  services:
+  - docker:dind
+  stage: release
   script:
-    - npmci docker pull registry.gitlab.com test
+  - npmci node install stable
+  - npmci docker login
+  - npmci docker build
+  - npmci docker test
+  - npmci docker push registry.gitlab.com
+  only:
+  - tags
+  tags:
+  - docker
+  - priv
+
+trigger:
+  stage: trigger
+  script:
+    - npmci trigger
   only:
     - tags
   tags:

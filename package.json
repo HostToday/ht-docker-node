@@ -17,5 +17,15 @@
     "url": "https://github.com/HostToday/ht-docker-node/issues"
   },
   "homepage": "https://github.com/HostToday/ht-docker-node#readme",
-  "private": true
+  "private": true,
+  "files": [
+    "ts/*",
+    "ts_web/*",
+    "dist/*",
+    "dist_web/*",
+    "assets/*",
+    "cli.js",
+    "npmextra.json",
+    "readme.md"
+  ]
 }

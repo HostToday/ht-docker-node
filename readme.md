@@ -1,5 +1,5 @@
 # @hosttoday/ht-docker-node
-docker image with nodejs and ship.zone support
+docker image with nodejs and shipzone.io support
 
 ## Availabililty and Links
 * [npmjs.org (npm package)](https://www.npmjs.com/package/@hosttoday/ht-docker-node)
@@ -29,10 +29,11 @@ RUN npmci install [node_version_number] // this installs node using node and set
 ```
 
 ## Availability
-Registry | Image Path
---- | ---
-GitLab Registry | registry.gitlab.com/hosttoday/ht-docker-node
-Docker Hub | hosttoday/ht-docker-node
+
+| Registry        | Image Path                                   |
+| --------------- | -------------------------------------------- |
+| GitLab Registry | registry.gitlab.com/hosttoday/ht-docker-node |
+| Docker Hub      | hosttoday/ht-docker-node                     |
 
 ## Flavour Overview
 

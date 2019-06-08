@@ -1,0 +1,13 @@
+{
+  "gitzone": {
+    "module": {
+      "githost": "gitlab.com",
+      "gitscope": "hosttoday",
+      "gitrepo": "ht-docker-node",
+      "shortDescription": "docker image with nodejs and shipzone.io support",
+      "npmPackagename": "@hosttoday/ht-docker-node",
+      "license": "MIT"
+    }
+  },
+  "npmci": {}
+}
