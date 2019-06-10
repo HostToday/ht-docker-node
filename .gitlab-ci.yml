@@ -31,7 +31,7 @@ release:
   - docker:dind
   stage: release
   script:
-  - apk add glib-2.40 gthread-2.0
+  - apk add glib libstdc++ libbz2
   - git clone git://git.qemu.org/qemu.git
   - (cd qemu && ./configure --target-list=arm-linux-user --static && make && ls -a)
   - npmci node install stable
