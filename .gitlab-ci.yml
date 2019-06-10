@@ -31,6 +31,8 @@ release:
   - docker:dind
   stage: release
   script:
+  - git clone git://git.qemu.org/qemu.git
+  - (cd qemu && ./configure --target-list=arm-linux-user --static && make && ls -a)
   - npmci node install stable
   - npmci docker login
   - npmci docker build

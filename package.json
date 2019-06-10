@@ -4,7 +4,7 @@
   "description": "docker image with nodejs and shipzone.io support",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"no npm test specified\"",
     "build": "echo \"Not needed for now\""
   },
   "repository": {
@@ -27,5 +27,8 @@
     "cli.js",
     "npmextra.json",
     "readme.md"
-  ]
+  ],
+  "directories": {
+    "test": "test"
+  }
 }
