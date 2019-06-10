@@ -1,3 +1,8 @@
-FROM node:11.3.0-alpine
-LABEL author="Lossless GmbH <hello@lossless.com>"
-RUN apk update && apk add bash libc6-compat
+FROM hosttoday/ht-docker-node:latest as stage1
+RUN apt-get update && apt-get install -y --no-install-recommends qemu-user-static binfmt-support
+  # the following lines need to be run on a system that supports both architectures
+  # update-binfmts --enable qemu-arm \
+  # update-binfmts --display qemu-arm
+
+FROM arm32v7/node:lts-jessie as stage2
+
