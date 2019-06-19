@@ -7,7 +7,6 @@ cache:
   key: "$CI_BUILD_STAGE"
 
 before_script:
-  - npm install -g @shipzone/npmci
   - npmci npm prepare
 
 stages:
@@ -27,7 +26,7 @@ testSTABLE:
     - docker
 
 release:
-  image: hosttoday/ht-docker-dbase:npmci
+  image: registry.gitlab.com/hosttoday/ht-docker-dbase:npmci
   services:
   - docker:dind
   stage: release
