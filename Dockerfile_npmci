@@ -1,4 +1,4 @@
-FROM hosttoday/ht-docker-node:stable
+FROM hosttoday/ht-docker-node:lts
 LABEL author="Lossless GmbH <hello@lossless.com>"
 
 RUN npm install -g @shipzone/npmci
