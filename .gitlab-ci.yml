@@ -7,7 +7,7 @@ cache:
   key: "$CI_BUILD_STAGE"
 
 before_script:
-  - npm install -g npmci
+  - npm install -g @shipzone/npmci
   - npmci npm prepare
 
 stages:
