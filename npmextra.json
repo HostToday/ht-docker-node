@@ -9,5 +9,10 @@
       "license": "MIT"
     }
   },
-  "npmci": {}
+  "npmci": {
+    "dockerRegistries": [
+      "docker.io",
+      "registry.gitlab.com"
+    ]
+  }
 }

@@ -1,5 +1,5 @@
 # gitzone ci_docker
-image: hosttoday/ht-docker-node:npmci
+image: registry.gitlab.com/hosttoday/ht-docker-node:npmci
 
 cache:
   paths:
@@ -7,6 +7,7 @@ cache:
   key: "$CI_BUILD_STAGE"
 
 before_script:
+  - npm install -g npmci
   - npmci npm prepare
 
 stages:
@@ -35,7 +36,7 @@ release:
   - npmci docker login
   - npmci docker build
   - npmci docker test
-  - npmci docker push registry.gitlab.com
+  - npmci docker push
   only:
   - tags
   tags:
