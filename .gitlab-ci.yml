@@ -15,10 +15,10 @@ stages:
 - trigger
 - pages
     
-testSTABLE:
+testLTS:
   stage: test
   script:
-    - npmci node install stable
+    - npmci node install lts
     - npmci npm install
     - npmci npm test
   coverage: /\d+.?\d+?\%\s*coverage/
@@ -31,7 +31,7 @@ release:
   - docker:dind
   stage: release
   script:
-  - npmci node install stable
+  - npmci node install lts
   - npmci docker login
   - npmci docker build
   - npmci docker test
