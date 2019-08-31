@@ -1,5 +1,5 @@
 # check if npmci is available
-npmci -v
+# npmci -v
 
 # TODO update npmci to not require package.json
 # npmci node install stable
