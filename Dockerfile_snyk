@@ -1,4 +1,5 @@
 FROM hosttoday/ht-docker-node:npmci
 LABEL author="Lossless GmbH <hello@lossless.com>"
 
-RUN npm install -g snyk
+RUN npm install -g snyk@1.248.0
+
