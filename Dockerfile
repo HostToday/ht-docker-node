@@ -3,7 +3,7 @@ LABEL author="Lossless GmbH <hello@lossless.com>"
 
 WORKDIR /workspace
 # important environment variables 
-ENV NODE_VERSION_LTS="14.3.0" NODE_VERSION_STABLE="14.3.0" NVM_DIR="/usr/local/nvm"
+ENV NODE_VERSION_LTS="14.15.4" NODE_VERSION_STABLE="15.8.0" NVM_DIR="/usr/local/nvm"
 
 # Set debconf to run non-interactively and install packages
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections \

@@ -1,4 +1,4 @@
-FROM node:14.3.0-alpine
+FROM node:14.15.4-alpine
 LABEL author="Lossless GmbH <hello@lossless.com>"
 RUN apk update && apk add bash libc6-compat
 ENV NODE_OPTIONS="--max_old_space_size=1000"
